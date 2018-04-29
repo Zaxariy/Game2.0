@@ -1,4 +1,4 @@
-from Fus_Def import only_number,proverka,stavka,random_number,Ace_Axe,one_open_game,Game
+from Fus_Def import exception_char,check_number,stavka,random_number,Ace_Axe,couting_Axe_Ace,Game,entering_number
 import random
 #оглавление
 print("\t\t\tДобро пожаловать в игру Топоры и Тузы 2.0")
@@ -21,8 +21,8 @@ spinkoins_game = spinkoins - stavka_game
 spinkoins_game=Game(spinkoins_game,stavka_game)
 print("Ваш текущий счет:"+str(spinkoins_game))
 
-if spinkoins>0 :
-    while spinkoins>0 :
+if spinkoins_game>0 :
+    while spinkoins_game>0 :
         while True:
             print("Желаете сыграть еще?:введите yes или no")
             otvet = input("Ваш ответ:")
