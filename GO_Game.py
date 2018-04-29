@@ -1,4 +1,5 @@
 from Fus_Def import only_number,proverka,stavka,random_number,Ace_Axe,one_open_game,Game
+import random
 #оглавление
 print("\t\t\tДобро пожаловать в игру Топоры и Тузы 2.0")
 print("\t\t\tПравила игры ")
