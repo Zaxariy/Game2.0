@@ -37,6 +37,7 @@ if spinkoins_game>0 :
             spinkoins_game= Game(spinkoins_game,stavka_game)
             print("Ваш текущий счет:"+str(spinkoins_game))
             if spinkoins_game==0 :
+                print("Извините,вы больше не можете играть")
                 break
         elif otvet=='no' :
             exit()

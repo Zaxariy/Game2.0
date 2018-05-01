@@ -109,11 +109,10 @@ def couting_Axe_Ace(r_num) :
 def Game(spinkoins,stavka) :
     #рандом число
     r_num=random_number()
-    print(r_num)
 
     #вызов игры
     axe=couting_Axe_Ace(r_num)
-    print("У вас осталось 9 попыток \n")
+    print("У вас осталось 7 попыток \n")
     attempt = 1
     # условие цикличности
     if axe == 4:
@@ -122,14 +121,14 @@ def Game(spinkoins,stavka) :
         while axe != 4:
             axe = couting_Axe_Ace(r_num)
             attempt = attempt + 1
-            num_of_attempt = 10 - attempt
+            num_of_attempt = 8 - attempt
             if num_of_attempt!=0 :
                 print("У вас осталось" + ' ' + str(num_of_attempt) + " попыток")
                 print(" ")
             else :
                 print("Игра окончена\n")
 
-            if attempt == 10:
+            if attempt == 8:
                 break
 
 
@@ -138,14 +137,12 @@ def Game(spinkoins,stavka) :
     else:
         print("Простите,вы проиграли")
 
-    if attempt <= 6:
-        win = stavka * 2 + stavka
+    if attempt <= 5:
+        win = stavka * 3
+    elif attempt == 6:
+        win = stavka * 2
     elif attempt == 7:
-        win = stavka * 1 + stavka
-    elif attempt == 8:
-        win = stavka * 0.6 + stavka
-    elif attempt == 9:
-        win = stavka * 0.2 + stavka
+        win = stavka * 0.5
     else:
         win = 0
     win = float(win)
