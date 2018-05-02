@@ -1,6 +1,6 @@
 import random
+#функция исключаящая ввод любого символа кроме цифр
 
-#функция исключаящая ввод символов
 def exception_char():
     while True:
         try:
@@ -8,7 +8,7 @@ def exception_char():
             user_number=str(user_number)
             return user_number
         except ValueError:
-            print("Ошибка:В вашем числе есть недопустимые символы")
+            print("Ошибка:В вашем числе есть недопустимые символы\n")
 
 def entering_number() :
     user_number=exception_char()
@@ -18,7 +18,7 @@ def entering_number() :
 
     if check_number(user_number)==404 :
         while check_number(user_number)==404 :
-            print("В вашем числе есть повторяющиеся знаки или число состоит менее или более чем из 4 символом ")
+            print("В вашем числе есть повторяющиеся знаки или число состоит менее или более чем из 4 символом\n")
             user_number = exception_char()
             user_number = str(user_number)
 
@@ -42,11 +42,11 @@ def stavka(spin) :
         print(" ")
     else :
         while stavka<1 or stavka>max_stavka :
-            print("Ошибка,ваша ставка не подходит")
+            print("Ошибка,ваша ставка не подходит\n")
             stavka=int(exception_char())
             if stavka==1 :
                 break
-    print("Спасибо,ваша ставка принята")
+    print("Спасибо,ваша ставка принята\n")
     return stavka
 
 
@@ -122,12 +122,17 @@ def Game(spinkoins,stavka) :
             axe = couting_Axe_Ace(r_num)
             attempt = attempt + 1
             num_of_attempt = 8 - attempt
-            if num_of_attempt!=0 :
+            if num_of_attempt>=5 :
                 print("У вас осталось" + ' ' + str(num_of_attempt) + " попыток")
                 print(" ")
-            else :
-                print("Игра окончена\n")
-
+            elif 1<num_of_attempt<5:
+                print("У вас осталось" + ' ' + str(num_of_attempt) + " попытки")
+                print(" ")
+            elif num_of_attempt==1 :
+                print("У вас осталось" + ' ' + str(num_of_attempt) + " попытка")
+                print(" ")
+            else:
+                print("Игра окончена\n ")
             if attempt == 8:
                 break
 
@@ -147,5 +152,4 @@ def Game(spinkoins,stavka) :
         win = 0
     win = float(win)
     spinkoins = int(spinkoins + win)
-    #print("Ваш текущий счет:" + " " + str(spinkoins))
     return spinkoins
