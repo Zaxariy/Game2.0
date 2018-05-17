@@ -8,7 +8,7 @@ def exception_char():
             user_number=str(user_number)
             return user_number
         except ValueError:
-            print("Ошибка:В вашем числе есть недопустимые символы\n")
+            print("Ошибка:В вашем числе есть недопустимые символы или вы ввели дробное число\n")
 
 def entering_number() :
     user_number=exception_char()
@@ -151,5 +151,5 @@ def Game(spinkoins,stavka) :
     else:
         win = 0
     win = float(win)
-    spinkoins = int(spinkoins + win)
+    spinkoins = float(spinkoins + win)
     return spinkoins
