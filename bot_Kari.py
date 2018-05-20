@@ -2,8 +2,8 @@
 import vk_api
 import time
 # для исползования игры в системе должны находится фаил Fus_Def
-#from Fus_Def
-#import exception_char,check_number,stavka,random_number,Ace_Axe,couting_Axe_Ace,Game,entering_numberfrom Fus_Def
+from Fus_Def
+import exception_char,check_number,stavka,random_number,Ace_Axe,couting_Axe_Ace,Game,entering_numberfrom Fus_Def
 
 vk=vk_api.VkApi(token='c7d1e7566a5ec805dbb2ff7f7c4606b3edbf9b0da55d3c87042cd6ad9b192c4c7347b9ed4885e9ab9947e')
 vk.auth_token()
@@ -48,6 +48,8 @@ while True:
                           exit()
            else :
                write_msg(item['user_id'], 'Извините,вы больше не можете играть')
+        elif pole['items'][0]['body'] == 'N':
+           write_msg(item['user_id'], 'и зачем вы к нам тогда зашли? =( Если захотите поиграть обязательно напишите Y')
         else:
             write_msg(item['user_id'], 'Ваш язык мне не знаком, но все же предложу вам игру, если хотите участвовать, то нажми на Y, если нет - N')
     time.sleep(1)    
